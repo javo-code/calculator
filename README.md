@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+### Características del Proyecto
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+En la pantalla de la calculadora, se visualiza el contenido de la variable `input`, que representa la entrada de los botones presionados.
 
-## Available Scripts
+Al hacer clic en los botones numéricos y operadores, se agregarán a la pantalla de entrada `input`, lo que permitirá construir una expresión matemática.
 
-In the project directory, you can run:
+Al hacer clic en el botón `=`, la calculadora realizará el cálculo de la expresión matemática ingresada y mostrará el resultado en pantalla.
 
-### `npm start`
+Si no se ha ingresado ninguna expresión y se hace clic en `=`, se mostrará una alerta solicitando al usuario que ingrese valores para realizar los cálculos.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+El botón `clear` permite limpiar la pantalla y reiniciar la calculadora.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Lógica del Código
 
-### `npm test`
+Se utiliza el hook de estado `useState` para declarar la variable `input`, que almacena la entrada de los botones presionados.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+La función `addInput` se encarga de agregar los valores de los botones presionados a la variable `input`.
 
-### `npm run build`
+La función `resolve` realiza el cálculo de la expresión matemática ingresada utilizando la librería `mathjs`. Si no se ha ingresado ninguna expresión, muestra una alerta.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+La estructura del componente App contiene el título y los botones de la calculadora organizados en filas. Los botones utilizan la función `addInput` para agregar valores y la función `resolve` para realizar los cálculos.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+El componente ButtonClear recibe la función anónima `() => setInput('')` como `handleClear`, que se encarga de limpiar la pantalla de la calculadora.
